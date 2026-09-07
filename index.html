@@ -16,24 +16,52 @@
   <div class="topbar">
     <span class="mark">Brayan Caharian</span>
     <nav>
-      <a href="#work">Work</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="kingbytes.html">King Bytes</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </div>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero" id="home">
   <div class="wrap">
-    <span class="status"><span class="dot"></span>Systems in production &amp; operational</span>
-    <h1>I build the software<br>that keeps a<br><span class="amber">power station</span> running.</h1>
-    <p class="lede">Full-stack developer, systems and network engineer, and the founder of King Bytes. I design, ship, and operate internal platforms end to end — then turn the best of them into products.</p>
-    <p class="role">// full-stack dev &nbsp;·&nbsp; sysadmin &nbsp;·&nbsp; network engineer &nbsp;·&nbsp; founder</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="#work">See the work</a>
-      <a class="btn btn-ghost" href="https://github.com/caharianb" target="_blank" rel="noopener">GitHub</a>
+    <div class="hero-grid">
+      <div class="intro">
+        <p class="greeting">Hi there, I'm</p>
+        <h1 class="name">Brayan <span class="amber">Caharian</span></h1>
+        <div class="typed-wrap">I build <span class="typed" id="typed"></span><span class="cursor" id="cursor">&nbsp;</span></div>
+        <p class="hero-lede">Sole IT engineer at a power station and founder of King Bytes. I design, ship, and run internal platforms end to end &mdash; then turn the best of them into products.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#work">See the work</a>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
+        </div>
+        <!-- SOCIAL ROW — GitHub + email are live.
+             Send me your LinkedIn / Facebook / X links and I'll fill the rest,
+             or replace the href="#" values below yourself. -->
+        <div class="socials">
+          <a href="https://github.com/caharianb" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="mailto:caharian.b@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM19 19h-3v-5.3c0-1.3-.5-2.1-1.6-2.1-.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8V19h-3V9h3v1.3c.4-.6 1.1-1.5 2.8-1.5 2 0 3.5 1.3 3.5 4.2V19z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="avatar-col">
+        <div class="avatar-disc">
+          <div class="disc"></div>
+          <img src="images/headshot.jpg" alt="Brayan Caharian"
+               onerror="this.parentNode.querySelector('.mono-fallback').style.display='flex';this.remove();">
+          <div class="mono-fallback" style="display:none">BC</div>
+          <span class="badge"><span class="dot"></span>available</span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -42,31 +70,76 @@
 <section id="about" class="band">
   <div class="wrap about reveal">
     <div class="sec-head"><span class="idx">01</span><h2>About</h2></div>
-    <div class="about-grid">
-      <div class="portrait">
-        <img src="images/headshot.jpg" alt="Brayan Caharian"
-             onerror="this.parentNode.querySelector('.mono-fallback').style.display='flex';this.remove();">
-        <div class="ring"></div>
-        <div class="mono-fallback" style="display:none">BC</div>
+    <div>
+      <p style="max-width:64ch;font-size:1.08rem">I'm the sole IT engineer at a power station, which means the job has no edges: one day it's an approval engine in a Flask app, the next it's redesigning the core switch topology, extracting settlement data from the electricity market, or standing up a new internal service from scratch.</p>
+      <p style="max-width:64ch;font-size:1.08rem;margin-top:1.1rem">Alongside that, I run <a href="kingbytes.html" style="color:var(--amber-soft);border-bottom:1px solid var(--petrol-line)">King Bytes</a>, a small software studio in the Philippines, where the systems I've proven internally grow into commercial products other businesses can use. I like building things that are honest about what they do, easy to hand over, and still standing months later.</p>
+      <div class="facts">
+        <div><span class="k">Based in</span><span class="v">Philippines</span></div>
+        <div><span class="k">Studio</span><span class="v">King Bytes</span></div>
+        <div><span class="k">Focus</span><span class="v">Web apps &middot; Infra &middot; Data</span></div>
+        <div><span class="k">GitHub</span><span class="v">caharianb</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="idx">02</span><h2>What I work with</h2></div>
+    <div class="skills">
+      <div>
+        <h4>Development</h4>
+        <ul>
+          <li>Python &amp; Flask</li>
+          <li>SQLAlchemy ORM</li>
+          <li>SQL Server &amp; PostgreSQL</li>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Dash &amp; Tkinter (desktop)</li>
+          <li>REST APIs &amp; integrations</li>
+          <li>Multi-tenant SaaS architecture</li>
+        </ul>
       </div>
       <div>
-        <p>I'm the sole IT engineer at a power station, which means the job has no edges: one day it's an approval engine in a Flask app, the next it's redesigning the core switch topology, extracting settlement data from the electricity market, or standing up a new internal service from scratch.</p>
-        <p>Alongside that, I run <a href="kingbytes.html" style="color:var(--amber-soft);border-bottom:1px solid var(--petrol-line)">King Bytes</a>, a small software studio in the Philippines, where the systems I've proven internally grow into commercial products other businesses can use. I like building things that are honest about what they do, easy to hand over, and still standing months later.</p>
-        <div class="facts">
-          <div><span class="k">Based in</span><span class="v">Philippines</span></div>
-          <div><span class="k">Studio</span><span class="v">King Bytes</span></div>
-          <div><span class="k">Focus</span><span class="v">Web apps &middot; Infra &middot; Data</span></div>
-          <div><span class="k">GitHub</span><span class="v">caharianb</span></div>
-        </div>
+        <h4>Infrastructure &amp; network</h4>
+        <ul>
+          <li>Windows Server &amp; IIS</li>
+          <li>Reverse proxy (ARR / URL Rewrite)</li>
+          <li>Docker containers</li>
+          <li>Switching &amp; VLAN design</li>
+          <li>Redundant dual-core topology</li>
+          <li>Avaya &middot; Ruckus &middot; Cisco</li>
+          <li>Device &amp; uptime monitoring</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Systems &amp; data</h4>
+        <ul>
+          <li>LDAPS / directory authentication</li>
+          <li>SSO &mdash; signed tokens, SAML, OIDC</li>
+          <li>Data extraction &amp; ETL pipelines</li>
+          <li>SOAP &amp; mutual-TLS integration</li>
+          <li>Forecasting &amp; live dashboards</li>
+          <li>SAP system administration</li>
+          <li>Deployment &amp; release process</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tools">
+      <p class="k">// tooling</p>
+      <div class="chips">
+        <span>Waitress</span><span>python-dotenv</span><span>itsdangerous</span><span>Werkzeug</span>
+        <span>ldap3</span><span>zeep</span><span>requests-pkcs12</span><span>PyInstaller</span>
+        <span>Git / GitHub</span><span>SSMS</span><span>PowerShell</span><span>JSONB</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WORK -->
-<section id="work">
+<section id="work" class="band">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="idx">02</span><h2>Selected work</h2></div>
+    <div class="sec-head reveal"><span class="idx">03</span><h2>Selected work</h2></div>
 
     <div class="group reveal">
       <p class="group-label">Internal platforms &amp; systems</p>
@@ -156,59 +229,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="band">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="idx">03</span><h2>What I work with</h2></div>
-    <div class="skills">
-      <div>
-        <h4>Development</h4>
-        <ul>
-          <li>Python &amp; Flask</li>
-          <li>SQLAlchemy ORM</li>
-          <li>SQL Server &amp; PostgreSQL</li>
-          <li>HTML / CSS / JavaScript</li>
-          <li>Dash &amp; Tkinter (desktop)</li>
-          <li>REST APIs &amp; integrations</li>
-          <li>Multi-tenant SaaS architecture</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Infrastructure &amp; network</h4>
-        <ul>
-          <li>Windows Server &amp; IIS</li>
-          <li>Reverse proxy (ARR / URL Rewrite)</li>
-          <li>Docker containers</li>
-          <li>Switching &amp; VLAN design</li>
-          <li>Redundant dual-core topology</li>
-          <li>Avaya &middot; Ruckus &middot; Cisco</li>
-          <li>Device &amp; uptime monitoring</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Systems &amp; data</h4>
-        <ul>
-          <li>LDAPS / directory authentication</li>
-          <li>SSO &mdash; signed tokens, SAML, OIDC</li>
-          <li>Data extraction &amp; ETL pipelines</li>
-          <li>SOAP &amp; mutual-TLS integration</li>
-          <li>Forecasting &amp; live dashboards</li>
-          <li>SAP system administration</li>
-          <li>Deployment &amp; release process</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tools">
-      <p class="k">// tooling</p>
-      <div class="chips">
-        <span>Waitress</span><span>python-dotenv</span><span>itsdangerous</span><span>Werkzeug</span>
-        <span>ldap3</span><span>zeep</span><span>requests-pkcs12</span><span>PyInstaller</span>
-        <span>Git / GitHub</span><span>SSMS</span><span>PowerShell</span><span>JSONB</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap contact reveal">
@@ -227,6 +247,32 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* --- typing effect --- */
+  (function(){
+    var roles = ['full-stack apps','internal platforms','network infrastructure','products at King Bytes'];
+    var el = document.getElementById('typed');
+    var cursor = document.getElementById('cursor');
+    var rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(!el) return;
+    if(rm){ el.textContent = roles[0]; return; }
+    var r=0,c=0,deleting=false;
+    function tick(){
+      var word = roles[r];
+      if(!deleting){
+        el.textContent = word.slice(0,c+1); c++;
+        if(c===word.length){ deleting=true; return setTimeout(tick,1400); }
+        return setTimeout(tick,70);
+      } else {
+        el.textContent = word.slice(0,c-1); c--;
+        if(c===0){ deleting=false; r=(r+1)%roles.length; return setTimeout(tick,300); }
+        return setTimeout(tick,35);
+      }
+    }
+    tick();
+  })();
+
+  /* --- gentle reveal --- */
   var rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if(!rm && 'IntersectionObserver' in window){
     var io = new IntersectionObserver(function(es){
