@@ -241,3 +241,32 @@ footer a{color:var(--amber-soft)}
   .socials{justify-content:center}
   .hero-lede{margin-left:auto;margin-right:auto}
 }
+
+/* ============================================================
+   Experience timeline + Education / Certifications
+   ============================================================ */
+.timeline{position:relative;margin-top:.5rem;padding-left:1.6rem}
+.timeline::before{content:"";position:absolute;left:5px;top:.4rem;bottom:.4rem;
+  width:2px;background:var(--petrol-line)}
+.tl-item{position:relative;padding:0 0 2rem 1.4rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-1.6rem;top:.35rem;width:12px;height:12px;
+  border-radius:50%;background:var(--amber);border:3px solid var(--petrol-deep)}
+.tl-item .when{font-family:var(--mono);font-size:.78rem;color:var(--amber);margin-bottom:.2rem}
+.tl-item h3{font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--porcelain)}
+.tl-item .org{font-family:var(--sans);font-weight:600;color:var(--amber-soft);font-size:.98rem;margin-bottom:.5rem}
+.tl-item p{max-width:70ch;color:var(--porcelain);opacity:.92}
+
+.edu-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:2.5rem;align-items:start}
+.edu-card h4{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--porcelain)}
+.edu-card .org{color:var(--amber-soft);font-size:.95rem;margin-top:.2rem}
+.edu-card .when{font-family:var(--mono);font-size:.78rem;color:var(--porcelain-dim);margin-top:.2rem}
+.cert-list{display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.4rem;margin-top:.4rem}
+.cert-list .cert{display:flex;align-items:flex-start;gap:.6rem;color:var(--porcelain);
+  font-size:.96rem;opacity:.94}
+.cert-list .cert::before{content:"";flex:none;width:7px;height:7px;margin-top:.55rem;
+  border-radius:2px;background:var(--amber);transform:rotate(45deg)}
+@media (max-width:720px){
+  .edu-grid{grid-template-columns:1fr;gap:2rem}
+  .cert-list{grid-template-columns:1fr}
+}
