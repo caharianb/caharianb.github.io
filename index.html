@@ -8,159 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --petrol-deep:#07211F;
-    --petrol:#0E3A38;
-    --petrol-line:#1C524E;
-    --amber:#FFB03A;
-    --amber-soft:#FFC978;
-    --porcelain:#F6F2E9;
-    --porcelain-dim:#D9D3C6;
-    --ink:#0B1817;
-    --live:#37C871;
-    --sans:'IBM Plex Sans',system-ui,sans-serif;
-    --display:'Space Grotesk',system-ui,sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,monospace;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:var(--sans);
-    background:var(--petrol-deep);
-    color:var(--porcelain);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:1.5rem 0;font-family:var(--mono);font-size:.8rem;
-    color:var(--porcelain-dim);letter-spacing:.02em;
-  }
-  .topbar .mark{color:var(--porcelain);font-weight:500}
-  .topbar nav{display:flex;gap:1.5rem}
-  .topbar nav a{transition:color .2s}
-  .topbar nav a:hover,.topbar nav a:focus-visible{color:var(--amber)}
-
-  /* ---------- hero ---------- */
-  .hero{padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.5rem,6vw,4rem)}
-  .status{
-    display:inline-flex;align-items:center;gap:.55rem;
-    font-family:var(--mono);font-size:.78rem;color:var(--porcelain-dim);
-    border:1px solid var(--petrol-line);border-radius:999px;
-    padding:.4rem .85rem;margin-bottom:1.8rem;
-  }
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--live);
-    box-shadow:0 0 0 0 rgba(55,200,113,.6);animation:pulse 2.6s infinite}
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(55,200,113,.5)}
-    70%{box-shadow:0 0 0 7px rgba(55,200,113,0)}
-    100%{box-shadow:0 0 0 0 rgba(55,200,113,0)}
-  }
-  .hero h1{
-    font-family:var(--display);font-weight:600;
-    font-size:clamp(2.6rem,7.5vw,5rem);line-height:1.02;
-    letter-spacing:-.02em;color:var(--porcelain);
-  }
-  .hero h1 .amber{color:var(--amber)}
-  .hero .lede{
-    font-size:clamp(1.05rem,2.3vw,1.4rem);
-    max-width:56ch;margin-top:1.5rem;color:var(--porcelain);
-  }
-  .hero .role{
-    font-family:var(--mono);font-size:.9rem;color:var(--amber-soft);
-    margin-top:1.5rem;
-  }
-  .hero .cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.4rem}
-  .btn{
-    font-family:var(--sans);font-weight:600;font-size:.95rem;
-    padding:.8rem 1.5rem;border-radius:8px;transition:transform .15s,background .2s,border-color .2s;
-    border:1px solid transparent;cursor:pointer;
-  }
-  .btn-primary{background:var(--amber);color:var(--petrol-deep)}
-  .btn-primary:hover,.btn-primary:focus-visible{background:var(--amber-soft)}
-  .btn-ghost{border-color:var(--petrol-line);color:var(--porcelain)}
-  .btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--amber);color:var(--amber)}
-
-  /* ---------- section frame ---------- */
-  section{padding:clamp(2.8rem,6vw,4.5rem) 0}
-  .band{background:var(--petrol)}
-  .sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.6rem}
-  .sec-head h2{
-    font-family:var(--display);font-weight:600;
-    font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em;color:var(--porcelain);
-  }
-  .sec-head .idx{font-family:var(--mono);font-size:.85rem;color:var(--amber)}
-
-  /* ---------- about ---------- */
-  .about p{max-width:64ch;font-size:1.08rem;color:var(--porcelain)}
-  .about p+p{margin-top:1.1rem}
-  .facts{display:flex;flex-wrap:wrap;gap:2.2rem;margin-top:2.4rem;
-    font-family:var(--mono);font-size:.85rem}
-  .facts .k{color:var(--porcelain-dim);display:block;margin-bottom:.3rem}
-  .facts .v{color:var(--porcelain);font-size:1rem}
-
-  /* ---------- work ---------- */
-  .group-label{font-family:var(--mono);font-size:.82rem;color:var(--amber);
-    margin:0 0 1.4rem;padding-bottom:.7rem;border-bottom:1px solid var(--petrol-line)}
-  .group+.group{margin-top:3.2rem}
-
-  .proj{display:grid;grid-template-columns:1fr;gap:.7rem;padding:1.7rem 0;
-    border-bottom:1px solid rgba(28,82,78,.5)}
-  .proj:last-child{border-bottom:none}
-  .proj .head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-  .proj h3{font-family:var(--display);font-weight:600;font-size:1.35rem;color:var(--porcelain)}
-  .proj .tag{font-family:var(--mono);font-size:.72rem;color:var(--petrol-deep);
-    background:var(--amber);padding:.2rem .55rem;border-radius:5px;white-space:nowrap}
-  .proj .tag.build{background:transparent;color:var(--amber-soft);border:1px solid var(--petrol-line)}
-  .proj p{max-width:70ch;color:var(--porcelain);opacity:.92}
-  .stack{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.5rem}
-  .stack span{font-family:var(--mono);font-size:.74rem;color:var(--porcelain-dim);
-    border:1px solid var(--petrol-line);border-radius:5px;padding:.22rem .5rem}
-
-  .featured{background:var(--petrol);border:1px solid var(--petrol-line);
-    border-radius:14px;padding:1.9rem;margin-bottom:1.4rem}
-  .featured h3{font-size:1.55rem}
-  .featured .kicker{font-family:var(--mono);font-size:.78rem;color:var(--amber);margin-bottom:.5rem}
-
-  /* ---------- skills ---------- */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
-  .skills h4{font-family:var(--display);font-weight:500;font-size:1.05rem;
-    color:var(--amber-soft);margin-bottom:.9rem}
-  .skills ul{list-style:none}
-  .skills li{padding:.32rem 0;color:var(--porcelain);opacity:.92;font-size:.98rem}
-
-  /* ---------- contact ---------- */
-  .contact{text-align:left}
-  .contact h2{font-family:var(--display);font-weight:600;
-    font-size:clamp(1.8rem,5vw,3rem);color:var(--porcelain);letter-spacing:-.01em}
-  .contact p{max-width:52ch;margin-top:1rem;color:var(--porcelain);font-size:1.1rem}
-  .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:2rem;font-family:var(--mono);font-size:.95rem}
-  .links a{border-bottom:1px solid var(--petrol-line);padding-bottom:.2rem;transition:color .2s,border-color .2s}
-  .links a:hover,.links a:focus-visible{color:var(--amber);border-color:var(--amber)}
-
-  footer{padding:2.5rem 0 3rem;font-family:var(--mono);font-size:.78rem;color:var(--porcelain-dim)}
-
-  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:3px}
-
-  /* reveal (single, gentle, reduced-motion safe) */
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none}
-    .dot{animation:none}
-    html{scroll-behavior:auto}
-  }
-  @media (max-width:600px){
-    .topbar nav{display:none}
-    .proj .head{align-items:flex-start}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -170,6 +18,7 @@
     <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
+      <a href="kingbytes.html">King Bytes</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -193,13 +42,23 @@
 <section id="about" class="band">
   <div class="wrap about reveal">
     <div class="sec-head"><span class="idx">01</span><h2>About</h2></div>
-    <p>I'm the sole IT engineer at a power station, which means the job has no edges: one day it's an approval engine in a Flask app, the next it's redesigning the core switch topology, extracting settlement data from the electricity market, or standing up a new internal service from scratch.</p>
-    <p>Alongside that, I run King Bytes, a small software studio in the Philippines. It's where the systems I've proven internally grow into commercial products other businesses can use. I like building things that are honest about what they do, easy to hand over, and still standing months later.</p>
-    <div class="facts">
-      <div><span class="k">Based in</span><span class="v">Philippines</span></div>
-      <div><span class="k">Studio</span><span class="v">King Bytes</span></div>
-      <div><span class="k">Focus</span><span class="v">Web apps · Infra · Data</span></div>
-      <div><span class="k">GitHub</span><span class="v">caharianb</span></div>
+    <div class="about-grid">
+      <div class="portrait">
+        <img src="images/headshot.jpg" alt="Brayan Caharian"
+             onerror="this.parentNode.querySelector('.mono-fallback').style.display='flex';this.remove();">
+        <div class="ring"></div>
+        <div class="mono-fallback" style="display:none">BC</div>
+      </div>
+      <div>
+        <p>I'm the sole IT engineer at a power station, which means the job has no edges: one day it's an approval engine in a Flask app, the next it's redesigning the core switch topology, extracting settlement data from the electricity market, or standing up a new internal service from scratch.</p>
+        <p>Alongside that, I run <a href="kingbytes.html" style="color:var(--amber-soft);border-bottom:1px solid var(--petrol-line)">King Bytes</a>, a small software studio in the Philippines, where the systems I've proven internally grow into commercial products other businesses can use. I like building things that are honest about what they do, easy to hand over, and still standing months later.</p>
+        <div class="facts">
+          <div><span class="k">Based in</span><span class="v">Philippines</span></div>
+          <div><span class="k">Studio</span><span class="v">King Bytes</span></div>
+          <div><span class="k">Focus</span><span class="v">Web apps &middot; Infra &middot; Data</span></div>
+          <div><span class="k">GitHub</span><span class="v">caharianb</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -209,26 +68,6 @@
   <div class="wrap">
     <div class="sec-head reveal"><span class="idx">02</span><h2>Selected work</h2></div>
 
-    <!-- Products -->
-    <div class="group reveal">
-      <p class="group-label">Products — King Bytes</p>
-
-      <div class="featured">
-        <p class="kicker">Flagship SaaS</p>
-        <div class="head"><h3>Kaboan</h3><span class="tag">Commercial</span></div>
-        <p>A multi-tenant employee portal sold as a product. A clean-room rebuild of the internal HRIS I run day to day, re-architected to be self-hosted and sellable: per-tenant isolation, flexible authentication (local, directory, or hybrid), a two-level navigation model, and a dashboard where customers assemble their own stat, table, chart and list widgets from a safe data-source catalog. Priced à-la-carte by module with an annual care plan.</p>
-        <div class="stack"><span>Flask</span><span>PostgreSQL</span><span>Docker</span><span>JSONB</span><span>Multi-tenant</span></div>
-      </div>
-
-      <div class="featured">
-        <p class="kicker">Platform</p>
-        <div class="head"><h3>Ugnay</h3><span class="tag build">In development</span></div>
-        <p>A business-agnostic management platform built on three primitives — a money ledger, user-defined record types with flexible fields, and a due-dates layer — so a rental business, a lending operation and a retailer can all run on the same engine. Ships with template workspaces you copy in at setup, plus a self-service directory/SSO module for enterprise sign-on.</p>
-        <div class="stack"><span>Flask</span><span>PostgreSQL</span><span>JSONB</span><span>SSO / SAML / OIDC</span></div>
-      </div>
-    </div>
-
-    <!-- Internal systems -->
     <div class="group reveal">
       <p class="group-label">Internal platforms &amp; systems</p>
 
@@ -236,28 +75,47 @@
         <div class="head"><h3>Employee Portal / HRIS</h3><span class="tag">In production</span></div>
         <p>The primary internal platform: leave and overtime workflows, a configurable approval-routing engine, and HR administration. Built with a system-wide feature-toggle framework so every module can be switched on per deployment, a drag-and-drop dashboard builder, per-user theming, and an embedded learning module. It's the foundation the commercial product grew out of.</p>
         <div class="stack"><span>Flask</span><span>SQLAlchemy</span><span>SQL Server</span><span>IIS</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/portal.png" alt="Employee Portal screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
       </div>
 
       <div class="proj">
         <div class="head"><h3>IT Inventory &amp; Service Desk</h3><span class="tag">In production</span></div>
-        <p>Asset tracking with a full help-desk module — multi-assignee tickets, asset linking, grouped dashboards and activity logging — plus a live monitoring module that pings devices in the background and shows green/red status, records up/down events, and keeps an incident log with severity, duration and printable reports.</p>
+        <p>Asset tracking with a full help-desk module &mdash; multi-assignee tickets, asset linking, grouped dashboards and activity logging &mdash; plus a live monitoring module that pings devices in the background and shows green/red status, records up/down events, and keeps an incident log with severity, duration and printable reports.</p>
         <div class="stack"><span>Flask</span><span>SQL Server</span><span>Background workers</span><span>ICMP / TCP checks</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/inventory.png" alt="IT Inventory screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
       </div>
 
       <div class="proj">
         <div class="head"><h3>Learning Management System</h3><span class="tag">In production</span></div>
-        <p>A training platform wired into the employee portal with single sign-on — the portal mints a signed, short-lived token, the LMS verifies it and auto-provisions the user — backed by directory authentication. Handles courses, quizzes and learner tracking.</p>
+        <p>A training platform wired into the employee portal with single sign-on &mdash; the portal mints a signed, short-lived token, the LMS verifies it and auto-provisions the user &mdash; backed by directory authentication. Handles courses, quizzes and learner tracking.</p>
         <div class="stack"><span>Flask</span><span>LDAPS</span><span>Signed SSO tokens</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/lms.png" alt="LMS screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
       </div>
 
       <div class="proj">
         <div class="head"><h3>Document Archive</h3><span class="tag build">Recent build</span></div>
         <p>A standalone records-archive service built from scratch, with a four-tier role model (employee, uploader, archive admin, system admin) and a request workflow covering photocopy-versus-borrow, page scope and return dates. Directory-backed auth with a local-account fallback.</p>
         <div class="stack"><span>Flask</span><span>SQL Server</span><span>LDAPS</span><span>Role-based access</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/archive.png" alt="Document Archive screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
       </div>
     </div>
 
-    <!-- Data & infra -->
     <div class="group reveal">
       <p class="group-label">Data &amp; infrastructure</p>
 
@@ -265,12 +123,33 @@
         <div class="head"><h3>Electricity-market data tools</h3><span class="tag">Tooling</span></div>
         <p>A Python toolchain for the Philippine wholesale electricity market: a client that pulls settlement data over mutual-TLS SOAP web services and parses the binary payloads to CSV and SQLite, wrapped in a desktop GUI. Paired with a real-time compliance dashboard featuring a price forecast with a confidence band and an accuracy scorecard against a naive baseline.</p>
         <div class="stack"><span>Python</span><span>Dash</span><span>Tkinter</span><span>SOAP / mutual-TLS</span><span>SQLite</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/wesm.png" alt="Market dashboard screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
       </div>
 
       <div class="proj">
         <div class="head"><h3>Network switch deployment tool</h3><span class="tag">Tooling</span></div>
-        <p>A desktop app that generates and pushes switch configurations across Avaya, Ruckus and Cisco hardware — template placeholder substitution, a VLAN-port assignment grid pre-filled from templates, and a paced serial-console push. Packaged as a standalone executable. Built to support a redundant dual-core network redesign.</p>
+        <p>A desktop app that generates and pushes switch configurations across Avaya, Ruckus and Cisco hardware &mdash; template placeholder substitution, a VLAN-port assignment grid pre-filled from templates, and a paced serial-console push. Packaged as a standalone executable. Built to support a redundant dual-core network redesign.</p>
         <div class="stack"><span>Python</span><span>Tkinter</span><span>Serial console</span><span>PyInstaller</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/switch-tool.png" alt="Switch deployment tool screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
+      </div>
+    </div>
+
+    <div class="group reveal">
+      <p class="group-label">Products</p>
+      <div class="kb-callout">
+        <div class="txt">
+          <div class="brand">King <b>Bytes</b></div>
+          <p>My software studio. Two commercial products in the works &mdash; Kaboan, a multi-tenant employee portal, and Ugnay, a business-agnostic management platform. See what they do and how they're built.</p>
+        </div>
+        <a class="btn btn-primary" href="kingbytes.html">Explore King Bytes</a>
       </div>
     </div>
 
@@ -286,10 +165,11 @@
         <h4>Development</h4>
         <ul>
           <li>Python &amp; Flask</li>
-          <li>SQLAlchemy</li>
+          <li>SQLAlchemy ORM</li>
           <li>SQL Server &amp; PostgreSQL</li>
           <li>HTML / CSS / JavaScript</li>
-          <li>Dash &amp; Tkinter</li>
+          <li>Dash &amp; Tkinter (desktop)</li>
+          <li>REST APIs &amp; integrations</li>
           <li>Multi-tenant SaaS architecture</li>
         </ul>
       </div>
@@ -297,23 +177,33 @@
         <h4>Infrastructure &amp; network</h4>
         <ul>
           <li>Windows Server &amp; IIS</li>
-          <li>Reverse proxy &amp; deployment</li>
-          <li>Docker</li>
+          <li>Reverse proxy (ARR / URL Rewrite)</li>
+          <li>Docker containers</li>
           <li>Switching &amp; VLAN design</li>
-          <li>Redundant core topology</li>
+          <li>Redundant dual-core topology</li>
+          <li>Avaya &middot; Ruckus &middot; Cisco</li>
           <li>Device &amp; uptime monitoring</li>
         </ul>
       </div>
       <div>
         <h4>Systems &amp; data</h4>
         <ul>
-          <li>LDAPS / directory auth</li>
-          <li>Single sign-on (token &amp; SAML/OIDC)</li>
-          <li>Data extraction &amp; ETL</li>
+          <li>LDAPS / directory authentication</li>
+          <li>SSO &mdash; signed tokens, SAML, OIDC</li>
+          <li>Data extraction &amp; ETL pipelines</li>
           <li>SOAP &amp; mutual-TLS integration</li>
-          <li>Forecasting &amp; dashboards</li>
+          <li>Forecasting &amp; live dashboards</li>
           <li>SAP system administration</li>
+          <li>Deployment &amp; release process</li>
         </ul>
+      </div>
+    </div>
+    <div class="tools">
+      <p class="k">// tooling</p>
+      <div class="chips">
+        <span>Waitress</span><span>python-dotenv</span><span>itsdangerous</span><span>Werkzeug</span>
+        <span>ldap3</span><span>zeep</span><span>requests-pkcs12</span><span>PyInstaller</span>
+        <span>Git / GitHub</span><span>SSMS</span><span>PowerShell</span><span>JSONB</span>
       </div>
     </div>
   </div>
@@ -332,20 +222,19 @@
 </section>
 
 <div class="wrap">
-  <footer>© <span id="yr"></span> Brayan Caharian · Built and shipped by hand.</footer>
+  <footer>&copy; <span id="yr"></span> Brayan Caharian &middot; Built and shipped by hand.</footer>
 </div>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-  // single gentle reveal on scroll, guarded for reduced motion
-  const rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if(!rm && 'IntersectionObserver' in window){
-    const io = new IntersectionObserver((es)=>{
-      es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
     },{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   } else {
-    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
   }
 </script>
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King Bytes — Software Studio by Brayan Caharian</title>
+<meta name="description" content="King Bytes is a Philippine software studio building commercial business platforms — Kaboan, a multi-tenant employee portal, and Ugnay, a business-agnostic management platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <span class="mark"><a href="index.html">Brayan Caharian</a></span>
+    <nav>
+      <a href="index.html">Portfolio</a>
+      <a href="#products">Products</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="status"><span class="dot"></span>Software studio &middot; Philippines</span>
+    <h1>King <span class="amber">Bytes</span></h1>
+    <p class="lede">A small software studio building business platforms the honest way: proven in production first, then packaged so any business can run on them. Self-hosted, straightforward to own, and priced without surprises.</p>
+    <p class="role">// built and run by Brayan Caharian</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#products">See the products</a>
+      <a class="btn btn-ghost" href="index.html">Back to portfolio</a>
+    </div>
+  </div>
+</header>
+
+<!-- APPROACH -->
+<section class="band">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="idx">01</span><h2>How King Bytes builds</h2></div>
+    <div class="skills">
+      <div>
+        <h4>Proven before it's sold</h4>
+        <ul>
+          <li>Products start as real internal systems</li>
+          <li>Rebuilt clean-room to be sellable</li>
+          <li>Hardened on live daily use</li>
+        </ul>
+      </div>
+      <div>
+        <h4>You own your deployment</h4>
+        <ul>
+          <li>Self-hosted with Docker</li>
+          <li>Your data stays in your database</li>
+          <li>Local, directory, or hybrid sign-on</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Priced without surprises</h4>
+        <ul>
+          <li>Pay only for the modules you use</li>
+          <li>Optional annual care plan</li>
+          <li>No per-seat lock-in games</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="idx">02</span><h2>Products</h2></div>
+
+    <div class="reveal">
+      <div class="featured">
+        <p class="kicker">Flagship SaaS</p>
+        <div class="head"><h3>Kaboan</h3><span class="tag">Commercial</span></div>
+        <p>A multi-tenant employee portal sold as a product &mdash; a clean-room rebuild of the internal HRIS I run every day, re-architected to be self-hosted and sellable. Per-tenant isolation, flexible authentication (local, directory, or hybrid), a two-level navigation model, and a dashboard where customers assemble their own stat, table, chart and list widgets from a safe data-source catalog. A two-tier admin model separates the vendor console from each customer's own system administration.</p>
+        <div class="stack"><span>Flask</span><span>PostgreSQL</span><span>Docker</span><span>JSONB</span><span>Multi-tenant</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/kaboan.png" alt="Kaboan screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
+      </div>
+
+      <div class="featured">
+        <p class="kicker">Platform</p>
+        <div class="head"><h3>Ugnay</h3><span class="tag build">In development</span></div>
+        <p>A business-agnostic management platform built on three primitives &mdash; a money ledger, user-defined record types with flexible fields, and a due-dates layer &mdash; so a rental business, a lending operation and a retailer can all run on the same engine. It ships with template workspaces (Rental, Lending, Retail, or start blank) you copy in at setup, plus a self-service directory/SSO module for enterprise sign-on with per-tenant encrypted credentials.</p>
+        <div class="stack"><span>Flask</span><span>PostgreSQL</span><span>JSONB</span><span>SSO / SAML / OIDC</span></div>
+        <figure class="shot" data-shot>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="images/ugnay.png" alt="Ugnay screenshot" data-optional
+               onerror="this.closest('[data-shot]').setAttribute('data-empty','true')">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="band">
+  <div class="wrap contact reveal">
+    <div class="sec-head"><span class="idx">03</span><h2>Work with King Bytes</h2></div>
+    <p>Interested in Kaboan or Ugnay for your business, or want something built? Get in touch and let's talk about what you need.</p>
+    <div class="links">
+      <a href="mailto:caharian.b@gmail.com">caharian.b@gmail.com</a>
+      <a href="https://github.com/caharianb" target="_blank" rel="noopener">github.com/caharianb</a>
+      <a href="index.html">Back to portfolio</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>&copy; <span id="yr"></span> King Bytes &middot; A studio by Brayan Caharian.</footer>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rm && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+</script>
+
+</body>
+</html>
