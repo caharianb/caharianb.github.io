@@ -222,15 +222,15 @@ footer a{color:var(--amber-soft)}
 .socials svg{width:20px;height:20px}
 
 .avatar-disc{position:relative;width:min(360px,78vw);aspect-ratio:1;margin:0 auto}
-.avatar-disc .disc{position:absolute;inset:0;border-radius:50%;
-  background:radial-gradient(circle at 50% 40%,var(--amber-soft) 0%,var(--amber) 60%,#e0902a 100%)}
-.avatar-disc img{position:absolute;inset:7%;width:86%;height:86%;object-fit:cover;
-  object-position:center top;border-radius:50%;border:4px solid var(--petrol-deep)}
-.avatar-disc .mono-fallback{position:absolute;inset:7%;width:86%;height:86%;border-radius:50%;
+.avatar-disc .disc{display:none}
+.avatar-disc img{position:absolute;inset:6%;width:88%;height:88%;object-fit:cover;
+  object-position:center top;border-radius:50%;
+  box-shadow:0 0 0 6px var(--petrol-deep),0 0 0 9px var(--amber)}
+.avatar-disc .mono-fallback{position:absolute;inset:6%;width:88%;height:88%;border-radius:50%;
   display:flex;align-items:center;justify-content:center;font-family:var(--display);
-  font-weight:700;font-size:clamp(3rem,10vw,5rem);color:var(--petrol-deep);
-  background:transparent;border:4px solid var(--petrol-deep)}
-.avatar-disc .badge{position:absolute;right:6%;bottom:10%;background:var(--petrol-deep);
+  font-weight:700;font-size:clamp(3rem,10vw,5rem);color:var(--amber);
+  background:var(--petrol);box-shadow:0 0 0 6px var(--petrol-deep),0 0 0 9px var(--amber)}
+.avatar-disc .badge{position:absolute;right:9%;bottom:9%;z-index:2;background:var(--petrol-deep);
   border:1px solid var(--petrol-line);color:var(--live);font-family:var(--mono);font-size:.72rem;
   padding:.35rem .7rem;border-radius:999px;display:inline-flex;align-items:center;gap:.4rem}
 .avatar-disc .badge .dot{width:7px;height:7px}
